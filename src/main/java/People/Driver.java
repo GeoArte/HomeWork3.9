@@ -7,14 +7,13 @@ import Transport.*;
 
 import javax.annotation.PostConstruct;
 
-public abstract class Driver
+public class Driver
 {
     private String name;
     private Transport transport;
-    private int experience;
     String defaulta = "Default";
 
-    public Driver(String name, Transport transport, int experience)
+    public Driver(String name, Transport transport)
     {
         this.transport = transport;
         if (name.equals("") || name.equals(null))
@@ -24,14 +23,6 @@ public abstract class Driver
         else
         {
             this.name = name;
-        }
-        if (experience >= 0)
-        {
-            this.experience = experience;
-        }
-        else
-        {
-            this.experience = 0;
         }
     }
     @PostConstruct
@@ -47,9 +38,6 @@ public abstract class Driver
         return this.name;
     }
 
-    public int getExperience() {
-        return this.experience;
-    }
 
     public Transport getTransport() {
         return this.transport;
@@ -83,6 +71,6 @@ public abstract class Driver
             return false;
         }
         Driver driver = (Driver) obj;
-        return experience == driver.experience && Objects.equals(name, driver.name) && Objects.equals(transport, driver.transport);
+        return Objects.equals(name, driver.name) && Objects.equals(transport, driver.transport);
     }
 }
