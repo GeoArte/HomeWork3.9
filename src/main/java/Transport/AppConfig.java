@@ -18,6 +18,7 @@ public class AppConfig {
     public Pickup getPickupBeen(){
         return new Pickup("Jeep", "Compass", 2014, "USA", "Blue", 201);
     }
+    //Добавил бины
     @Bean (name = "Иван")
     public Driver getDriver1(){
         return new Driver("Иван", getCarBeen());
