@@ -21,7 +21,9 @@ public class Bus extends Transport
         System.out.println("Остановка на пит стоп");
     }
     @Override
-    public Type getType(){return this.getType();}
+    public Type getType () {
+        return this.type;
+    }
 
     @Override
     public String printType()

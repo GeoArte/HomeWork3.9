@@ -7,7 +7,9 @@ public class Pickup extends Transport
         super(brand, model, year, country, color, speed, Type.PICKUP);
     }
     @Override
-    public Type getType(){return this.getType();}
+    public Type getType () {
+        return this.type;
+    }
     public void bestTimeCircle()
     {
         System.out.println("Лучшее время круга");

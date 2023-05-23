@@ -9,7 +9,7 @@ public class Car extends Transport
     }
     @Override
     public Type getType () {
-        return this.getType();
+        return this.type;
     }
     public void bestTimeCircle ()
     {
