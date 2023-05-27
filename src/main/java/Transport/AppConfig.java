@@ -1,5 +1,6 @@
 package Transport;
 
+import People.Driver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,5 +18,17 @@ public class AppConfig {
     public Pickup getPickupBeen(){
         return new Pickup("Jeep", "Compass", 2014, "USA", "Blue", 201);
     }
-
+    //Добавил бины
+    @Bean (name = "Иван")
+    public Driver getDriver1(){
+        return new Driver("Иван", getCarBeen());
+    }
+    @Bean (name = "Василий")
+    public Driver getDriver2(){
+        return new Driver("Василий", getBusBeen());
+    }
+    @Bean (name = "Джон")
+    public Driver getDriver3(){
+        return new Driver("Джон", getPickupBeen());
+    }
 }
